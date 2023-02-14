@@ -1,0 +1,127 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/CSSStyle/HomeStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/CSSStyle/style.css">
+    <style>
+        #RedMenu {
+            background-color: #B00;
+            border-color: #B00;
+            margin-bottom: 10px;
+        }
+
+            #RedMenu ul li a {
+                color: #ffffff;
+            }
+
+            #RedMenu ul li:hover {
+                background-color: #000;
+            }
+
+        #Logo {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="RedMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" id="Logo">
+                    <img src="~/Images/sfclogo.jpg" height="35" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "UserHomePage", "UserHome")</li>
+                <li>@Html.ActionLink("Help", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="~/Home/Index"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+    <div class="Heading">
+        <h1>Welcome to SFC Movies</h1>
+        <p>Enjoy the cinema!</p>
+        <h2>Now Playing</h2>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <h3>Black Panther: Wakanda Forever</h3>
+                    <img src="~/Images/WkndaFrvr.jpg" height="328" />
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>
+                        Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from
+                        intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to
+                        embrace their next chapter, the heroes must band together with Nakia and Everett Ross to
+                        forge a new path for their beloved kingdom.
+                    </p>
+                    <p><a class="btn btn-default" href="~/Booking/AddTicket">Get Ticket &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <h3>Kantara</h3>
+                    <img src="~/Images/kantara2.jpg" height="328" />
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>
+                        Kantara is a 2022 Indian Kannada-language action thriller film written and directed by Rishab Shetty,
+                        and produced by Vijay Kiragandur, under Hombale Films. The film stars Shetty as a Kambala champion who is
+                        at loggerheads with an upright DRFO officer, Murali.
+                    </p>
+                    <p><a class="btn btn-default" href="~/Booking/AddTicket">Get Ticket &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <h3>Mukundan Unni Associates</h3>
+                    <img src="~/Images/MukundanUnniAssoc.jpg" height="328" />
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>
+                        Advocate Mukundan Unni, played wants to be successful and leaves no stone unturned to achieve growth,
+                        prosperity, and respect. But this steadfast nature aided with an ample dose of greed comes with a cost.
+                    </p>
+                    <p><a class="btn btn-default" href="~/Booking/AddTicket">Get Ticket &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

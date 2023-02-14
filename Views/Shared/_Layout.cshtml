@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        #RedMenu {
+            background-color: #B00;
+            border-color: #B00;
+            margin-bottom: 10px;
+        }
+
+            #RedMenu ul li a {
+                color: #ffffff;
+            }
+
+            #RedMenu ul li:hover {
+                background-color: #000;
+            }
+
+        #Logo {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="RedMenu">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" id="Logo">
+                <img src="~/Images/sfclogo.jpg" height="35"/>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="~/User/InsertUser"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+            <li><a href="~/Login/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

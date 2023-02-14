@@ -1,0 +1,125 @@
+﻿@model OnlineTicketBookingSystem.Models.UserAccount
+
+@{
+    ViewBag.Title = "ADMIN";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/CSSStyle/AdminStyle.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Admin Home</title>
+    @Styles.Render("~/Content/css")
+    
+    <style>
+        #RedMenu {
+            background-color: #B00;
+            border-color: #B00;
+            margin-bottom: 10px;
+        }
+
+            #RedMenu ul li a {
+                color: #ffffff;
+            }
+
+        #Logo {
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="RedMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" id="Logo">
+                    <img src="~/Images/sfclogo.jpg" height="35" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li>@Html.ActionLink("Welcome Admin", "UserDisplay", "Admin")</li>
+                <li>@Html.ActionLink("Dashboard", "UserDisplay", "Admin")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="~/User/InsertUser"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                <li><a href="~/Home/Index"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Heading">
+        <h1>Admin Page</h1>
+    </div>
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="well">
+                <h3>User details</h3>
+                <p><a href="~/User/ShowAllUserDetails" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="well">
+                <h3>Add movie</h3>
+                <p><a href="~/Images/AddImage" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="well">
+                <h3>Movie details</h3>
+                <p><a href="~/Images/GetImages" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="well">
+                <h3>Add Show</h3>
+                <p><a href="~/MovieShow/AddShows" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="well">
+                <h3>Show details</h3>
+                <p><a href="~/MovieShow/GetAllShowDetails" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="well">
+                <h3>Ticket booking details</h3>
+                <p><a href="~/Booking/GetAllTktDetails" class="btn btn-primary btn-lg">Get !! &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the chart and set the chart values
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Films', 'Shows per Day'],
+                ['Gold', 8],
+                ['Mukundan Unni Assoc', 2],
+                ['Wakanda Forever', 4],
+                ['Padavettu', 2]
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'Seat Percentage', 'width': 1000, 'height': 600 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿@model OnlineTicketBookingSystem.Models.Booking
+
+@{
+    ViewBag.Title = "SeatsRemaining";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie Seat Booking</title>
+    <link rel="stylesheet" href="~/CSSStyle/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">
+                    <img src="~/Images/sfclogo.jpg" height="35" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "UserHomePage", "UserHome")</li>
+                <li>@Html.ActionLink("Help", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="~/Home/Index"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <img class="main-logo" src="~/Images/sfclogo.jpg" />
+    </div>
+
+
+    <div class="movie-container">
+        <label style="font-size: 1em;">Pick a movie:</label>
+        <select id="movie">
+            <option>Kantara</option>
+            <option>Black Panther: Wakanda Forever</option>
+            <option>Mukundan Unni Associates</option>
+        </select>
+    </div>
+
+    <p class="text" style="font-size: 1em;margin:0px 0px 15px 0px">
+        Remaining Seats: <span id="seattotal">0</span>
+    </p>
+
+    <a href="~/Booking/Booking">
+        <button class="btn-home">
+            Book Tickets!
+        </button>
+    </a>
+
+
+    <script src="~/Scripts/BookingScript.js">
+    </script>
+</body>
+</html>
+
+
+
+
+

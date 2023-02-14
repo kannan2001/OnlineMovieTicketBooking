@@ -1,0 +1,113 @@
+﻿@model OnlineTicketBookingSystem.Models.MovieShows
+
+@{
+    ViewBag.Title = "DeleteShows";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/CSSStyle/AdminStyle.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Admin Home</title>
+    @Styles.Render("~/Content/css")
+    <
+    <style>
+        #RedMenu {
+            background-color: #B00;
+            border-color: #B00;
+            margin-bottom: 10px;
+        }
+
+            #RedMenu ul li a {
+                color: #ffffff;
+            }
+
+        #Logo {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="RedMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" id="Logo">
+                    <img src="~/Images/sfclogo.jpg" height="35" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li>@Html.ActionLink("Welcome Admin", "UserDisplay", "Admin")</li>
+            </ul>
+        </div>
+    </nav>
+    <h2>DeleteShows</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>MovieShows</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Showid)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Showid)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MovieName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ScreenNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ScreenNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "GetAllShowDetails")
+            </div>
+        }
+    </div>
+    </body>
+</html>

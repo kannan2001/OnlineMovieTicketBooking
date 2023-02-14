@@ -1,0 +1,103 @@
+﻿@model IEnumerable<OnlineTicketBookingSystem.Models.MovieShows>
+
+@{
+    ViewBag.Title = "GetAllShowDetails";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/CSSStyle/AdminStyle.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Admin Home</title>
+    @Styles.Render("~/Content/css")
+    <
+    <style>
+        #RedMenu {
+            background-color: #B00;
+            border-color: #B00;
+            margin-bottom: 10px;
+        }
+
+            #RedMenu ul li a {
+                color: #ffffff;
+            }
+
+        #Logo {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="RedMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" id="Logo">
+                    <img src="~/Images/sfclogo.jpg" height="35" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li>@Html.ActionLink("Welcome Admin", "UserDisplay", "Admin")</li>
+            </ul>
+        </div>
+    </nav>
+    <hr />
+    <h2>Movie Show Details</h2>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Showid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScreenNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Showid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreenNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditShowDetails", new { id = item.Showid }) |
+                    @Html.ActionLink("Delete", "DeleteShows", new { id = item.Showid },
+                   new { onclick = "return confirm('Are you sure that you want to delete?');" })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    </body>
+</html>
