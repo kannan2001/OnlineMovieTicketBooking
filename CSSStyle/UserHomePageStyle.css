@@ -1,0 +1,26 @@
+﻿*{
+    box-sizing:border-box;
+}
+body {
+    background-size: cover;
+    font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: normal;
+    -webkit-text-size-adjust: 100%;
+}
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height: 200px;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}

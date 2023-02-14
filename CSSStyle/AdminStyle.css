@@ -1,0 +1,71 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('~/Images/background.jpg');
+    font-family: "Lato", sans-serif;
+}
+.Heading {
+    background-color: lightgrey;
+    padding: 30px;
+    display: inline-block;
+    width:100%;
+    border-radius: 10px;
+}
+
+.Heading h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.logo {
+    margin: 0px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+    .logo span {
+        color: #f7403b;
+    }
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 550px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+    .row.content {
+        height: auto;
+    }
+}
+.well h3 {
+    font-weight:bold;
+}
+.well{
+    background-color: lightgrey;
+    padding:30px;
+    border-radius:10px;
+}
